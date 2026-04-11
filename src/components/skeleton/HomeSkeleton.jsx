@@ -1,37 +1,24 @@
 export const HomeSkeleton = () => (
-  <div className="relative h-[85vh] min-h-[520px] overflow-hidden bg-slate-800 animate-pulse">
-    {/* Simulated gradient overlay */}
-    <div className="absolute inset-0 bg-gradient-to-r from-slate-700/80 via-slate-700/40 to-slate-700/20" />
-    {/* Left-aligned content skeleton */}
+  <div className="relative h-[85vh] min-h-[520px] overflow-hidden bg-gray-50 animate-pulse">
     <div className="absolute inset-0 flex items-center px-6 sm:px-12 lg:px-24">
       <div className="max-w-2xl w-full space-y-5">
-        {/* School name tag */}
         <div className="flex items-center gap-3">
-          <div className="w-8 h-px bg-slate-500" />
-          <div className="h-3 w-32 bg-slate-600 rounded" />
+          <div className="w-8 h-px bg-gray-300" />
+          <div className="h-3 w-32 bg-gray-300 rounded" />
         </div>
-        {/* Title */}
         <div className="space-y-3">
-          <div className="h-10 w-3/4 bg-slate-600 rounded" />
-          <div className="h-10 w-1/2 bg-slate-600 rounded" />
+          <div className="h-10 w-3/4 bg-gray-300 rounded" />
+          <div className="h-10 w-1/2 bg-gray-300 rounded" />
         </div>
-        {/* Subtitle */}
         <div className="space-y-2">
-          <div className="h-4 w-full max-w-md bg-slate-600 rounded" />
-          <div className="h-4 w-2/3 bg-slate-600 rounded" />
+          <div className="h-4 w-full max-w-md bg-gray-300 rounded" />
+          <div className="h-4 w-2/3 bg-gray-300 rounded" />
         </div>
-        {/* Buttons */}
         <div className="flex gap-4 pt-2">
-          <div className="h-12 w-36 bg-yellow-600/40 rounded" />
-          <div className="h-12 w-36 border border-slate-500 rounded" />
+          <div className="h-12 w-36 bg-gray-300 rounded" />
+          <div className="h-12 w-36 bg-gray-300 rounded" />
         </div>
       </div>
-    </div>
-    {/* Vertical dots — right side */}
-    <div className="absolute right-6 top-1/2 -translate-y-1/2 hidden lg:flex flex-col gap-2">
-      {[0,1,2,3].map((i) => (
-        <div key={i} className={`rounded-full bg-slate-600 ${i === 0 ? "w-1.5 h-6" : "w-1.5 h-1.5"}`} />
-      ))}
     </div>
   </div>
 );
