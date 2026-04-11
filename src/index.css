@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary-color: #f5c842;
+  --color-secondary-color: #3db54b;
+  --color-third-color: #223fa2;
+  --font-display: "Playfair Display", serif;
+  --font-body: "Lora", serif;
+}
+
+* {
+  font-family: "Lora", serif;
+}
