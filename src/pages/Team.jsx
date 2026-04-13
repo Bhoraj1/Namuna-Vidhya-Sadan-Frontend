@@ -61,7 +61,7 @@ const Team = () => {
         <HeroContainer bgImage={bgImg} title="Our team" subtitle="" />
 
         <div className=" ml-8 mr-6 min-h-screen bg-linear-to-br from-gray-50 via-white to-blue-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
             {/* Header */}
             <div className="text-center mb-8 sm:mb-12">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-third-color mb-3 sm:mb-4">
@@ -142,7 +142,7 @@ const Team = () => {
 
                   return (
                     <div key={member.id} className="group">
-                      <div className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                      <div className="bg-white  shadow-md overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                         {/* Member Photo */}
                         <div className="relative h-48 sm:h-56 lg:h-64 overflow-hidden">
                           <img
@@ -165,11 +165,7 @@ const Team = () => {
                           <p className="text-third-color font-medium mb-2 text-sm sm:text-base">
                             {member.position || member.designation}
                           </p>
-                          {categoryName && (
-                            <span className="inline-block bg-third-color/10 text-third-color px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium mb-3">
-                              {categoryName}
-                            </span>
-                          )}
+
                           {member.description && (
                             <p className="text-gray-600 text-xs sm:text-sm line-clamp-3">
                               {member.description}
@@ -183,13 +179,21 @@ const Team = () => {
               </div>
             ) : selectedCategory === null ? (
               <div className="text-center py-16 px-4">
-                <h3 className="text-lg font-semibold text-gray-500 mb-1">Select a Category</h3>
-                <p className="text-sm text-gray-400">Choose a category above to view team members</p>
+                <h3 className="text-lg font-semibold text-gray-500 mb-1">
+                  Select a Category
+                </h3>
+                <p className="text-sm text-gray-400">
+                  Choose a category above to view team members
+                </p>
               </div>
             ) : (
               <div className="text-center py-16 px-4">
-                <h3 className="text-lg font-semibold text-gray-500 mb-1">No team members found</h3>
-                <p className="text-sm text-gray-400">No members available in this category</p>
+                <h3 className="text-lg font-semibold text-gray-500 mb-1">
+                  No team members found
+                </h3>
+                <p className="text-sm text-gray-400">
+                  No members available in this category
+                </p>
               </div>
             )}
           </div>

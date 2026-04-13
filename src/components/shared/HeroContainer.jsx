@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { SCHOOL_NAME } from "../../data/siteData.js";
 
 const HeroContainer = ({ title, subtitle, bgImage, className = "" }) => {
   return (
@@ -20,7 +19,7 @@ const HeroContainer = ({ title, subtitle, bgImage, className = "" }) => {
           <div className="flex items-center gap-3 mb-4">
             <div className="w-8 h-px bg-yellow-400" />
             <span className="text-yellow-400 text-xs font-semibold uppercase tracking-[0.2em]">
-              {SCHOOL_NAME}
+              Namuna Vidhya Sadan
             </span>
           </div>
 

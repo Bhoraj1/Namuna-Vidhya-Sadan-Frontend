@@ -1,7 +1,7 @@
 import HeroSlider from "../components/home/HeroSlider.jsx";
 import AboutComponents from "../components/home/AboutComponents.jsx";
 import WhyChooseUs from "../components/home/WhyChooseUs.jsx";
-import LatestEvents from "../components/home/LatestEvents.jsx";
+import NoticeBoard from "../components/home/NoticeBoard.jsx";
 import PrincipalMessage from "../components/home/PrincipalMessage.jsx";
 import ExploreSchoolLife from "../components/home/ExploreSchoolLife.jsx";
 import Faqs from "../components/faqs/Faqs.jsx";
@@ -14,7 +14,7 @@ const Home = () => {
         <AboutComponents />
         <WhyChooseUs />
         <ExploreSchoolLife />
-        <LatestEvents />
+        <NoticeBoard />
         <PrincipalMessage />
         <Faqs />
       </div>

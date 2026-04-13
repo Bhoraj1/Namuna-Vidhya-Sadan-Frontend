@@ -5,14 +5,15 @@ import { useGetSlidesQuery } from "../../redux/features/SiteSlice.js";
 import { Link } from "react-router-dom";
 import ErrorMessage from "../shared/ErrorMessage";
 import { HomeSkeleton } from "../skeleton/HomeSkeleton.jsx";
-import { SCHOOL_NAME, heroSlides } from "../../data/siteData.js";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 const HeroSlider = () => {
-  const { data: _slidesData, isLoading, error } = useGetSlidesQuery();
+  const { data: slidesData, isLoading, error } = useGetSlidesQuery();
+  const slides = slidesData?.data || [];
+  const IMG_URL = import.meta.env.VITE_IMG_URL;
   const [activeIndex, setActiveIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
@@ -41,12 +42,12 @@ const HeroSlider = () => {
         loop={true}
         className="h-full w-full"
       >
-        {heroSlides.map((slide) => (
+        {slides.map((slide) => (
           <SwiperSlide key={slide.id}>
             <div className="relative h-full w-full">
               <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105 transition-transform duration-[8000ms]"
-                style={{ backgroundImage: `url(${slide.image})` }}
+                style={{ backgroundImage: `url(${IMG_URL}/${slide.image_url})` }}
               />
               {/* Dark gradient overlay — stronger on left for text readability */}
               <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/40 to-black/20" />
@@ -67,7 +68,7 @@ const HeroSlider = () => {
           >
             <div className="w-8 h-px bg-yellow-400" />
             <span className="text-yellow-400 text-xs font-semibold uppercase tracking-[0.2em]">
-              {SCHOOL_NAME}
+              Namuna Vidhya Sadan
             </span>
           </div>
 
@@ -78,7 +79,7 @@ const HeroSlider = () => {
             }`}
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
-            {heroSlides[activeIndex]?.title}
+            {slides[activeIndex]?.title}
           </h1>
 
           {/* Subtitle */}
@@ -128,7 +129,7 @@ const HeroSlider = () => {
 
       {/* Vertical slide dots — right side */}
       <div className="absolute right-6 top-1/2 -translate-y-1/2 z-30 hidden lg:flex flex-col gap-2">
-        {heroSlides.map((_, i) => (
+        {slides.map((_, i) => (
           <div
             key={i}
             className={`rounded-full transition-all duration-300 ${
