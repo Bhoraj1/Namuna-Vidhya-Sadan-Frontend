@@ -68,8 +68,6 @@ const Dashboard = () => {
         blogs: { label: "Blogs", icon: Newspaper, color: "bg-emerald-600" },
         events: { label: "Events", icon: Calendar, color: "bg-indigo-600" },
       };
-
-      // 2. Filtering the API response to remove student, class, etc.
       const stats = allowedKeys
         .filter((key) => statsData.data.stats[key] !== undefined)
         .map((key) => ({
@@ -87,7 +85,6 @@ const Dashboard = () => {
 
   return (
     <div className="min-h-screen bg-[#f8fafc] p-3 sm:p-6 lg:p-10 font-sans">
-      {/* --- LOGOUT BUTTON (Scroll Sensitive) --- */}
       <button
         onClick={() => setConfirmOpen(true)}
         disabled={isLoggingOut}
@@ -103,7 +100,6 @@ const Dashboard = () => {
         <span>{isLoggingOut ? "Signing Out..." : "Sign Out"}</span>
       </button>
 
-      {/* --- SCROLL TO TOP --- */}
       {showScrollTop && (
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
@@ -113,7 +109,6 @@ const Dashboard = () => {
         </button>
       )}
 
-      {/* --- HEADER --- */}
       <div className="mb-6 sm:mb-10">
         <h1 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight uppercase">
           Admin <span className="text-blue-600 italic">Panel</span>
@@ -121,7 +116,6 @@ const Dashboard = () => {
         <div className="h-1 w-16 sm:w-20 bg-blue-600 mt-1 rounded-full"></div>
       </div>
 
-      {/* --- FILTERED STATS CARDS --- */}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-6 mb-6 sm:mb-10">
         {dynamicStats.map((stat, idx) => (
           <div
