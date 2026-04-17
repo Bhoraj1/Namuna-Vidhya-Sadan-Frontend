@@ -18,7 +18,7 @@ export const login = async (req, res, next) => {
     // Optimized query - select only needed fields, LIMIT 1 for performance
     const [result] = await db.execute(
       "SELECT id, email, password, role FROM admin WHERE email = ? LIMIT 1",
-      [email]
+      [email],
     );
 
     if (result.length === 0) {
@@ -44,14 +44,14 @@ export const login = async (req, res, next) => {
       process.env.SECRET_KEY,
       {
         expiresIn: process.env.EXPIRE || "7d",
-      }
+      },
     );
 
     // Set cookie
     res.cookie("token", token, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: "lax",
+      httpOnly: false,
+      secure: true,
+      sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
 
@@ -84,7 +84,7 @@ export const getProfile = async (req, res, next) => {
 
     const [result] = await db.execute(
       "SELECT id, email, role, created_at FROM admin WHERE id = ? LIMIT 1",
-      [adminId]
+      [adminId],
     );
 
     if (result.length === 0) {
@@ -109,7 +109,7 @@ export const changePassword = async (req, res, next) => {
 
     const [result] = await db.execute(
       "SELECT password FROM admin WHERE id = ? LIMIT 1",
-      [adminId]
+      [adminId],
     );
 
     if (result.length === 0) {
@@ -138,17 +138,33 @@ export const changePassword = async (req, res, next) => {
 // Dashboard Stats
 export const getDashboardStats = async (req, res, next) => {
   try {
-    const [[{ studentCount }]] = await db.execute("SELECT COUNT(*) as studentCount FROM students");
-    const [[{ teamCount }]] = await db.execute("SELECT COUNT(*) as teamCount FROM team WHERE role = 'teacher'");
-    const [[{ classCount }]] = await db.execute("SELECT COUNT(*) as classCount FROM class_category");
-    const [[{ noticeCount }]] = await db.execute("SELECT COUNT(*) as noticeCount FROM notice");
-    const [[{ galleryCount }]] = await db.execute("SELECT COUNT(*) as galleryCount FROM gallery");
-    const [[{ blogCount }]] = await db.execute("SELECT COUNT(*) as blogCount FROM blog");
-    const [[{ subjectCount }]] = await db.execute("SELECT COUNT(*) as subjectCount FROM subjects");
-    const [[{ eventCount }]] = await db.execute("SELECT COUNT(*) as eventCount FROM event");
+    const [[{ studentCount }]] = await db.execute(
+      "SELECT COUNT(*) as studentCount FROM students",
+    );
+    const [[{ teamCount }]] = await db.execute(
+      "SELECT COUNT(*) as teamCount FROM team WHERE role = 'teacher'",
+    );
+    const [[{ classCount }]] = await db.execute(
+      "SELECT COUNT(*) as classCount FROM class_category",
+    );
+    const [[{ noticeCount }]] = await db.execute(
+      "SELECT COUNT(*) as noticeCount FROM notice",
+    );
+    const [[{ galleryCount }]] = await db.execute(
+      "SELECT COUNT(*) as galleryCount FROM gallery",
+    );
+    const [[{ blogCount }]] = await db.execute(
+      "SELECT COUNT(*) as blogCount FROM blog",
+    );
+    const [[{ subjectCount }]] = await db.execute(
+      "SELECT COUNT(*) as subjectCount FROM subjects",
+    );
+    const [[{ eventCount }]] = await db.execute(
+      "SELECT COUNT(*) as eventCount FROM event",
+    );
 
     const [recentNotices] = await db.execute(
-      "SELECT 'Notice' as category, title, created_at FROM notice ORDER BY created_at DESC LIMIT 5"
+      "SELECT 'Notice' as category, title, created_at FROM notice ORDER BY created_at DESC LIMIT 5",
     );
 
     return sendSuccess(res, 200, "Dashboard stats fetched", {
