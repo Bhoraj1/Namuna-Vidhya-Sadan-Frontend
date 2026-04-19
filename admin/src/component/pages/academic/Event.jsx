@@ -60,7 +60,7 @@ const Event = () => {
     formData.append("event_date", form.event_date);
 
     if (form.image) {
-      formData.append("images", form.image);
+      formData.append("pdf", form.image);
     }
 
     try {
