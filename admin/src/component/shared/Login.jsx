@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "../redux/feature/authState";
 import logoImg from "../../assets/image/logo.jpg";
 import ErrorToast from "./ErrorToast";
+import School from "../../assets/image/school.jpg";
 
 const AdminLogin = () => {
   const navigate = useNavigate();
@@ -40,9 +41,17 @@ const AdminLogin = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#f3f4f6] p-3 sm:p-4 font-sans">
+    <div className="min-h-screen flex items-center justify-center p-3 sm:p-4 font-sans relative overflow-hidden">
+      {/* Background image with blur */}
+      <div
+        className="absolute inset-0 bg-cover bg-center scale-105"
+        style={{
+          backgroundImage: `url(${School})`,
+          filter: "blur(3px) brightness(0.5)",
+        }}
+      />
       {/* Small Compact Card */}
-      <div className="bg-white w-full max-w-90 p-5 sm:p-6 md:p-8 rounded-2xl shadow-xl border border-gray-100">
+      <div className="relative z-10 bg-white w-full max-w-90 p-5 sm:p-6 md:p-8 rounded-2xl shadow-xl border border-gray-100">
         {/* --- LOGO SECTION (Smaller) --- */}
         <div className="text-center mb-5 sm:mb-6">
           <div className="relative w-14 h-14 sm:w-16 sm:h-16 mx-auto mb-2 sm:mb-3">
