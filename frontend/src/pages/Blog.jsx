@@ -198,8 +198,13 @@ const Blog = () => {
                       </h2>
 
                       <p className="text-gray-600 text-sm line-clamp-3 leading-relaxed grow mb-4">
-                        {post.description ||
-                          "Learn more about this topic in our detailed guide."}
+                        {post.description
+                          ? (() => {
+                              const div = document.createElement("div");
+                              div.innerHTML = post.description;
+                              return div.textContent || div.innerText || "";
+                            })()
+                          : "Learn more about this topic in our detailed guide."}
                       </p>
 
                       <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
