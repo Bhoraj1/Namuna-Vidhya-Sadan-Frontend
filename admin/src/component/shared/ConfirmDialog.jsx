@@ -1,5 +1,5 @@
 import React from "react";
-import { Trash2 } from "lucide-react";
+import { Trash2, LogOut } from "lucide-react";
 import Button from "./Button";
 
 const ConfirmDialog = ({
@@ -28,10 +28,11 @@ const ConfirmDialog = ({
                 : "#fee2e2",
             }}
           >
-            <Trash2
-              size={22}
-              style={{ color: isLogout ? "var(--color-secondary)" : "#ef4444" }}
-            />
+            {isLogout ? (
+              <LogOut size={22} style={{ color: "var(--color-secondary)" }} />
+            ) : (
+              <Trash2 size={22} style={{ color: "#ef4444" }} />
+            )}
           </div>
 
           <div className="flex-1">
