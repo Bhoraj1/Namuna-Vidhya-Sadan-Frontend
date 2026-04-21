@@ -5,7 +5,7 @@ const HeroContainer = ({ title, subtitle, bgImage, className = "" }) => {
   return (
     <div className="relative">
       <div
-        className={`relative h-[55vh] min-h-[360px] overflow-hidden bg-slate-900 ${className}`}
+        className={`relative  min-h-[70vh]  overflow-hidden bg-slate-900 ${className}`}
       >
         {bgImage && (
           <div
@@ -13,7 +13,7 @@ const HeroContainer = ({ title, subtitle, bgImage, className = "" }) => {
             style={{ backgroundImage: `url(${bgImage})` }}
           />
         )}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/40 to-black/20" />
+        <div className="absolute inset-0 bg-linear-to-r from-black/75 via-black/40 to-black/20" />
 
         <div className="absolute inset-0 flex items-center px-6 sm:px-12 lg:px-24">
           <div className="max-w-2xl">

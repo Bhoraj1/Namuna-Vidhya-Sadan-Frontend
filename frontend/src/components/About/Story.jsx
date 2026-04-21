@@ -49,13 +49,13 @@ const Story = () => {
           {/* Left — Timeline */}
           <div className="relative">
             {/* Vertical line */}
-            <div className="absolute left-[52px] top-0 bottom-0 w-px bg-gray-200" />
+            <div className="absolute left-13 top-0 bottom-0 w-px bg-gray-200" />
 
             <div className="space-y-10">
               {storyItems.map((item, i) => (
                 <div key={i} className="flex gap-6">
                   {/* Year badge */}
-                  <div className="shrink-0 w-[72px] flex flex-col items-center pt-1">
+                  <div className="shrink-0 w-18 flex flex-col items-center pt-1">
                     <div className="w-3 h-3 rounded-full bg-green-600 ring-4 ring-green-100 z-10" />
                     <span className="mt-2 text-[10px] font-bold uppercase tracking-wider text-green-600 text-center leading-tight">
                       {item.year}
@@ -87,7 +87,7 @@ const Story = () => {
                   alt={img.alt}
                   className="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/40 to-transparent" />
                 <p className="absolute bottom-3 left-4 text-white text-xs font-medium capitalize">
                   {img.alt}
                 </p>
