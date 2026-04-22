@@ -5,11 +5,13 @@ import NoticeBoard from "../components/home/NoticeBoard.jsx";
 import PrincipalMessage from "../components/home/PrincipalMessage.jsx";
 import ExploreSchoolLife from "../components/home/ExploreSchoolLife.jsx";
 import Faqs from "../components/faqs/Faqs.jsx";
+import Homeslider from "../components/home/HomeSlider.jsx";
 
 const Home = () => {
   return (
     <main className="bg-gray-50">
-      <HeroSlider />
+      {/* <HeroSlider /> */} it is used when dynamic comes from the admin
+      <Homeslider />
       <div className="px-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 2xl:px-12">
         <AboutComponents />
         <WhyChooseUs />

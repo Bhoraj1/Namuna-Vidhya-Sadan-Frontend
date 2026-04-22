@@ -7,7 +7,7 @@ import {
 } from "react-icons/fa";
 import HeroContainer from "../components/shared/HeroContainer";
 import bgImg from "../assets/img/scphoto.jpg";
-import { Data } from "../../Data.js/alldata.js";
+import { Data } from "../data/alldata.js";
 
 const Contact = () => {
   const info = Data[0];

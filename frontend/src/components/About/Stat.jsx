@@ -1,14 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
+import stats from "../../data/aboutData.js";
 
 const Stat = () => {
-  const stats = [
-    { number: "2000+", label: "Students" },
-    { number: "50+", label: "Teachers" },
-    { number: "20+", label: "Years" },
-    { number: "100%", label: "Success Rate" },
-  ];
-
   return (
     <section className=" py-8 sm:py-12 md:py-16 lg:py-20">
       <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
