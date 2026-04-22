@@ -9,7 +9,7 @@ const StudentReviews = () => {
   if (isLoading) {
     return (
       <div className="p-4">
-        <div className="max-w-[1050px] max-md:max-w-xl mx-auto">
+        <div className="max-w-262.5 max-md:max-w-xl mx-auto">
           <div className="text-center py-10 text-gray-500 animate-pulse">
             Loading reviews...
           </div>
@@ -21,7 +21,7 @@ const StudentReviews = () => {
   if (error) {
     return (
       <div className="p-4">
-        <div className="max-w-[1050px] max-md:max-w-xl mx-auto">
+        <div className="max-w-262.5 max-md:max-w-xl mx-auto">
           <div className="text-center py-10 text-red-500">
             Error fetching reviews!
           </div>
@@ -54,7 +54,7 @@ const StudentReviews = () => {
   if (displayReviews.length === 0) {
     return (
       <div className="p-4">
-        <div className="max-w-[1050px] max-md:max-w-xl mx-auto">
+        <div className="max-w-262.5 max-md:max-w-xl mx-auto">
           <div className="text-center py-10 text-gray-400">
             No reviews available.
           </div>
@@ -65,7 +65,7 @@ const StudentReviews = () => {
 
   return (
     <div className="p-4 bg-white">
-      <div className="max-w-[1050px] max-md:max-w-xl mx-auto">
+      <div className="max-w-262.5 max-md:max-w-xl mx-auto">
         <div className="grid md:grid-cols-2 items-start lg:gap-24 md:gap-16 gap-8">
           {/* Left Column - Testimonials */}
           <div className="space-y-6 rounded-lg">
@@ -101,7 +101,7 @@ const StudentReviews = () => {
                       </p>
                     )}
                   </div>
-                  <div className="flex-shrink-0">
+                  <div className="shrink-0">
                     {review.image ? (
                       <img
                         src={`${base_url}/${review.image}`}

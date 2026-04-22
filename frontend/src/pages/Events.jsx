@@ -5,7 +5,7 @@ import { EventCard } from "../components/Event/EventCard";
 import { EventsSkeleton } from "../components/skeleton/HomeSkeleton";
 import ErrorMessage from "../components/shared/ErrorMessage";
 import Pagination from "../components/shared/Pagination";
-import bgImg from "../assets/img/scphoto.jpg";
+import bgImg from "../assets/img/student.jpg";
 
 // Number of events per page
 const ITEMS_PER_PAGE = 8;
@@ -18,8 +18,12 @@ const Events = () => {
 
   const totalPages = Math.ceil(allEvents.length / ITEMS_PER_PAGE);
   const paginatedEvents = useMemo(
-    () => allEvents.slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE),
-    [allEvents, currentPage]
+    () =>
+      allEvents.slice(
+        (currentPage - 1) * ITEMS_PER_PAGE,
+        currentPage * ITEMS_PER_PAGE,
+      ),
+    [allEvents, currentPage],
   );
 
   return (

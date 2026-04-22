@@ -6,7 +6,7 @@ import HeroContainer from "../components/shared/HeroContainer";
 import { BlogSkeleton } from "../components/skeleton/HomeSkeleton";
 import ErrorMessage from "../components/shared/ErrorMessage";
 import Pagination from "../components/shared/Pagination";
-import bgImg from "../assets/img/student_group.jpg";
+import bgImg from "../assets/img/student.jpg";
 import Button from "../components/ButtonComponent.jsx";
 
 // Number of blog posts per page

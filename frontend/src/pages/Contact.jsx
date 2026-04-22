@@ -6,7 +6,7 @@ import {
   FaClock,
 } from "react-icons/fa";
 import HeroContainer from "../components/shared/HeroContainer";
-import bgImg from "../assets/img/student_group.jpg";
+import bgImg from "../assets/img/scphoto.jpg";
 import { Data } from "../../Data.js/alldata.js";
 
 const Contact = () => {
@@ -70,7 +70,9 @@ const Contact = () => {
                 <div className="bg-blue-100 rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
                   <FaClock className="text-blue-600 text-base sm:text-lg" />
                 </div>
-                <h3 className="text-lg sm:text-2xl font-semibold">Office Hours</h3>
+                <h3 className="text-lg sm:text-2xl font-semibold">
+                  Office Hours
+                </h3>
               </div>
 
               <div className="space-y-3 sm:space-y-4">

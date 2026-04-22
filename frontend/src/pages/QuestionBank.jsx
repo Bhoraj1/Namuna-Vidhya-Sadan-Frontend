@@ -3,7 +3,7 @@ import HeroContainer from "../components/shared/HeroContainer";
 import { QuestionBankSkeleton } from "../components/skeleton/HomeSkeleton";
 import ErrorMessage from "../components/shared/ErrorMessage";
 import Pagination from "../components/shared/Pagination";
-import bgImg from "../assets/img/student_group.jpg";
+import bgImg from "../assets/img/student.jpg";
 import { useGetQuestionBankQuery } from "../redux/features/academicSlice";
 import { FileText, Search, Book, Calendar, GraduationCap } from "lucide-react";
 
