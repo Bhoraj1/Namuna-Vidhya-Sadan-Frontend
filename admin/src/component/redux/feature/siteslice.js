@@ -8,7 +8,7 @@ export const siteApi = indexSlice.injectEndpoints({
         url: `/api/site/reviews`,
         method: "GET",
       }),
-    
+
       providesTags: ["site"],
     }),
     createReview: builder.mutation({
@@ -41,7 +41,7 @@ export const siteApi = indexSlice.injectEndpoints({
         url: "/api/site/faqs",
         method: "GET",
       }),
-     
+
       providesTags: ["site"],
     }),
     createFaq: builder.mutation({
@@ -74,7 +74,7 @@ export const siteApi = indexSlice.injectEndpoints({
         url: "/api/team",
         method: "GET",
       }),
-      
+
       providesTags: ["site"],
     }),
     createTeam: builder.mutation({
@@ -100,7 +100,39 @@ export const siteApi = indexSlice.injectEndpoints({
       }),
       invalidatesTags: ["site"],
     }),
-  }), 
+
+    // HOME SLIDERS
+    getSliders: builder.query({
+      query: () => ({
+        url: "/api/site/home-slider",
+        method: "GET",
+      }),
+      providesTags: ["site"],
+    }),
+    createSlider: builder.mutation({
+      query: (data) => ({
+        url: "/api/site/home-slider",
+        method: "POST",
+        body: data,
+      }),
+      invalidatesTags: ["site"],
+    }),
+    updateSlider: builder.mutation({
+      query: ({ id, data }) => ({
+        url: `/api/site/home-slider/${id}`,
+        method: "PATCH",
+        body: data,
+      }),
+      invalidatesTags: ["site"],
+    }),
+    deleteSlider: builder.mutation({
+      query: (id) => ({
+        url: `/api/site/home-slider/${id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["site"],
+    }),
+  }),
 });
 
 export const {
@@ -116,4 +148,8 @@ export const {
   useGetTeamQuery,
   useDeleteTeamMutation,
   useUpdateTeamMutation,
+  useGetSlidersQuery,
+  useCreateSliderMutation,
+  useUpdateSliderMutation,
+  useDeleteSliderMutation,
 } = siteApi;

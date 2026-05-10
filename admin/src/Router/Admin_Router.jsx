@@ -7,6 +7,7 @@ import Dashboard from "../component/pages/Dashboard";
 import FAQPage from "../component/pages/FAQs";
 import GalleryCategory from "../component/pages/gallery/Gallery_category";
 import Gallery from "../component/pages/gallery/Gallery_Content";
+import HomeSlider from "../component/pages/HomeSlider/HomeSlider";
 
 import Notice_Category from "../component/pages/Notice/Notice_Category";
 import NoticeManagement from "../component/pages/Notice/Notice_management";
@@ -85,5 +86,9 @@ export const adminRoutes = [
   {
     path: "team/category",
     element: <TeamCategory />,
+  },
+  {
+    path: "home-slider",
+    element: <HomeSlider />,
   },
 ];

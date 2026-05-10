@@ -187,6 +187,11 @@ const Dashboard = () => {
               <QuickBtn Icon={Image} label="Update Gallery" />
               <QuickBtn Icon={Newspaper} label="Blog Manager" />
               <QuickBtn Icon={Calendar} label="Schedule Event" />
+              <QuickBtn
+                Icon={Image}
+                label="Home Slider"
+                onClick={() => navigate("/admin/home-slider")}
+              />
             </div>
           </div>
           <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-blue-500/20 rounded-full blur-3xl"></div>
@@ -206,8 +211,11 @@ const Dashboard = () => {
   );
 };
 
-const QuickBtn = ({ Icon, label }) => (
-  <button className="w-full bg-white/5 hover:bg-white/10 border border-white/5 p-3 sm:p-4 rounded-xl sm:rounded-2xl flex items-center gap-2 sm:gap-4 transition-all group">
+const QuickBtn = ({ Icon, label, onClick }) => (
+  <button
+    onClick={onClick}
+    className="w-full bg-white/5 hover:bg-white/10 border border-white/5 p-3 sm:p-4 rounded-xl sm:rounded-2xl flex items-center gap-2 sm:gap-4 transition-all group"
+  >
     <Icon
       size={16}
       className="text-blue-400 group-hover:scale-110 transition-transform sm:w-4.5 sm:h-4.5 shrink-0"

@@ -11,10 +11,17 @@ const ErrorToast = ({ isOpen, onClose, message }) => {
           <AlertCircle className="text-red-600" size={18} />
         </div>
         <div className="flex-1 min-w-0">
-          <h3 className="text-xs sm:text-sm font-semibold text-gray-900">Login Failed</h3>
-          <p className="text-[11px] sm:text-xs text-gray-600 mt-1 break-words">{message}</p>
+          <h3 className="text-xs sm:text-sm font-semibold text-gray-900">
+            Login Failed
+          </h3>
+          <p className="text-[11px] sm:text-xs text-gray-600 mt-1 wrap-break-word">
+            {message}
+          </p>
         </div>
-        <button onClick={onClose} className="text-gray-400 hover:text-gray-600 shrink-0">
+        <button
+          onClick={onClose}
+          className="text-gray-400 hover:text-gray-600 shrink-0"
+        >
           <X size={16} />
         </button>
       </div>

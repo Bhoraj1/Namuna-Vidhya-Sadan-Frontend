@@ -49,6 +49,12 @@ const Sidebar = () => {
       path: "/admin/achievement",
       icon: Award,
     },
+    {
+      id: "slider",
+      label: "Home Slider",
+      path: "/admin/home-slider",
+      icon: Award,
+    },
   ];
 
   return (

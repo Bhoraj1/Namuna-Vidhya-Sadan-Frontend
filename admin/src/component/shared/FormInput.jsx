@@ -142,7 +142,7 @@ export const FormImageUpload = ({
           ? "border-blue-400 bg-blue-50"
           : "border-gray-200"
       }
-      file:mr-4 file:py-2.5 file:px-4 file:rounded-xl file:border-1 
+      file:mr-4 file:py-2.5 file:px-4 file:rounded-xl file:border 
       file:text-xs file:font-bold file:bg-blue-50 file:text-blue-700 
       hover:file:bg-blue-100
     `}
@@ -175,7 +175,7 @@ export const FormFileUpload = ({
         {/* File Preview */}
         {file && (
           <div className="relative px-4 py-2.5 rounded-xl border-2 border-blue-200 bg-blue-50 shrink-0">
-            <p className="text-xs font-bold text-blue-700 truncate max-w-[120px]">
+            <p className="text-xs font-bold text-blue-700 truncate max-w-30">
               {file.name}
             </p>
             <button
